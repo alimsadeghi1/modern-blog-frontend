@@ -19,6 +19,7 @@ export interface IEmotionTheme {
     };
     primary: EmotionColorAmount;
     secondary: EmotionColorAmount;
+    surface: EmotionColorAmount;
     text: EmotionColorAmount;
     border: EmotionColorAmount;
     shadow: EmotionColorAmount;

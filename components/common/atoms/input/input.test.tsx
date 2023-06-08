@@ -49,28 +49,6 @@ describe("InputComponent", () => {
     expect(inputElement).toHaveStyle(`color: ${colors.success[500]}`);
   });
 
-  it("should render helper text when provided", () => {
-    render(
-      <AppProviderComponent>
-        <InputComponent role="textbox" helperText="Helper Text" />
-      </AppProviderComponent>
-    );
-
-    const helperTextElement = screen.getByText(/Helper Text/i);
-    expect(helperTextElement).toBeInTheDocument();
-  });
-
-  it("should not render helper text when not provided", () => {
-    render(
-      <AppProviderComponent>
-        <InputComponent role="textbox" />
-      </AppProviderComponent>
-    );
-
-    const helperTextElement = screen.queryByText(/Helper Text/i);
-    expect(helperTextElement).not.toBeInTheDocument();
-  });
-
   it("should call onChange callback on input change", async () => {
     const MOCK_TEXT = "Hello, World :)";
     const onChangeMock = jest.fn();

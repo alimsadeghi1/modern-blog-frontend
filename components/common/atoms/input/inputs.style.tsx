@@ -1,31 +1,6 @@
 import styled from "@emotion/styled";
-import { IInput, IInputHelperText } from "./input.type";
+import { IInput } from "./input.type";
 import { Theme, css } from "@emotion/react";
-import TypographyComponent from "../typography/typography.component";
-
-const Container = styled("div")`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const statusHelperTextValues = {
-  error: (theme: Theme) => css`
-    color: ${theme.colors.error[500]};
-  `,
-  success: (theme: Theme) => css`
-    color: ${theme.colors.success[500]};
-  `,
-  default: (theme: Theme) => css`
-    color: ${theme.colors.text[300]};
-  `,
-};
-
-const HelperText = styled(TypographyComponent)<IInputHelperText>`
-  font-size: 0.875rem;
-  font-weight: 300;
-  ${({ status, theme }) => statusHelperTextValues[status || "default"](theme)};
-`;
 
 const statusInputValues = {
   error: (theme: Theme, disabled: boolean) => css`
@@ -55,7 +30,8 @@ const Input = styled("input")<IInput>`
     border-color: ${({ theme }) => theme.colors.primary[500]};
   }
 
-  ${({ status, theme, disabled }) => statusInputValues[status || "default"](theme, disabled || false)};
+  ${({ status, theme, disabled }) =>
+    statusInputValues[status || "default"](theme, disabled || false)};
 
   ${({ fullWidth }) =>
     fullWidth
@@ -66,7 +42,5 @@ const Input = styled("input")<IInput>`
 `;
 
 export const InputStyle = {
-  Container,
   Input,
-  HelperText,
 };

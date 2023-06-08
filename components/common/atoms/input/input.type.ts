@@ -6,7 +6,3 @@ export interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   helperText?: string;
 }
-
-export interface IInputHelperText {
-  status?: "default" | "error" | "success";
-}

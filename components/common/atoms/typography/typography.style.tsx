@@ -6,7 +6,7 @@ const Typography = styled(
     <Element {...restProps} />
   )
 )`
-  color: ${({ theme }) => theme.colors.secondary[500]};
+  color: ${({ theme }) => theme.colors.text[500]};
 `;
 
 export const TypographyStyle = {

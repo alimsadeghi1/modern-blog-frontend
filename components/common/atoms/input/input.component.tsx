@@ -9,13 +9,6 @@ export default function InputComponent({
   ...restProps
 }: IInput) {
   return (
-    <S.Container>
       <S.Input status={status} {...restProps} />
-      {helperText && (
-        <S.HelperText status={status} as="span">
-          {helperText}
-        </S.HelperText>
-      )}
-    </S.Container>
   );
 }

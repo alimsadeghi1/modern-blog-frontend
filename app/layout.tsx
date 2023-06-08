@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: JSX.Element }) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body className={vazir.className}>
         <AppProviderComponent>{children}</AppProviderComponent>
       </body>
